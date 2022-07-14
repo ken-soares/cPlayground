@@ -1,11 +1,13 @@
-prog: lib.o main.o
-	gcc -o prog lib.o main.o
+CC=gcc
+EXEC=prog
+SRC=$(wildcard *.c)
+OBJ=$(SRC:.c=.o)
 
-lib.o: lib.c
-	gcc -o lib.o -c lib.c
+$(EXEC): $(OBJ)
+	$(CC) -o $(EXEC) $(OBJ)
 
-main.o: main.c
-	gcc -o main.o -c main.c
+%.o: %.c
+	$(CC) -o $@ -c $^
 
-clean: prog *.o
-	rm prog *.o
+clean:
+	rm $(EXEC) $(OBJ)
