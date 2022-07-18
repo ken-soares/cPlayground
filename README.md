@@ -5,4 +5,4 @@ for example:
 * data structure implementations like linked lists
 * string processing exercices
 * list processing exercices
-* other exercices found online (which i put in `fun/`
+* other exercices found online (which i put in `fun/`)
