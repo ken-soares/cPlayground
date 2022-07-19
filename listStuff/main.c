@@ -11,9 +11,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include "main.h"
 
 void findMax(int *list){
-	
+
 	int max = list[0];
 	for(int i = 0; i < sizeof(list)/sizeof(int)+1;i++){
 		if(list[i] > max){
@@ -54,6 +55,22 @@ int findSum(int *list){
 	}
 	return sum;
 }
+
+int *bubble_sort(int *list){
+	int length = sizeof(list)/sizeof(list[0]);
+	for(int i = 0; i < length; i++){
+		for(int j = 0; j < length;j++){
+			if(list[j] > list[j+1]){
+				int tmp = list[j];
+				list[j] = list[j+1];
+				list[j+1] = tmp;
+			}
+		}
+	}
+
+	return list;
+}
+
 int main(void){
 
 	int *list = malloc(sizeof(int));
@@ -61,6 +78,11 @@ int main(void){
 	findMax(list);
 	findMin(list);
 	int sum = findSum(list);
-	printf("The sum of all the items in the list is %d", sum);
+	printf("The sum of all the items in the list is %d\n", sum);
+
+	list = bubble_sort(list);
+	for(int i = 0; i < sizeof(list)/sizeof(list[0]) + 1;i++){
+		printf("list element %d\n", list[i]);
+	}
 	return 0;
 }
