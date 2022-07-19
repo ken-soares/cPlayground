@@ -12,8 +12,8 @@
 #include <stdlib.h>
 #include <ctype.h>
 
-
 void findMax(int *list){
+	
 	int max = list[0];
 	for(int i = 0; i < sizeof(list)/sizeof(int)+1;i++){
 		if(list[i] > max){
