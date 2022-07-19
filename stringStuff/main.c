@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "main.h"
 
 int main(void){
 
@@ -32,6 +33,7 @@ int main(void){
 		}
 	}
 
-	printf("processed string: %s", str);
+	printf("processed string: %s\n", str);
+	printf("processed string uppercase: %s", upperc(str));
 	return 0;
 }
