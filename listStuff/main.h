@@ -1,7 +1,7 @@
 #ifndef MAIN_H
 #define MAIN_H
 
-int *sortfc(int*);
+int *bubble_sort(int*);
 int findSum(int*);
 int *askInput(int*);
 void findMin(int*);
